@@ -35,8 +35,8 @@ body {
 }
 
 .wrapper {
-	width: 700px;
-	height: 500px;
+	width: 750px;
+	height: 600px;
 	display: flex;
 	background-color: var(--white);
 	border-radius: 20px;
@@ -44,7 +44,7 @@ body {
 
 /* Aside */
 .aside {
-	width: 40%;
+	width: 35%;
 	border-radius: 20px;
 	background-image: url('./assets/images/bg-sidebar-desktop.svg');
 	background-position: center;
@@ -88,7 +88,7 @@ body {
 
 /* main */
 main {
-	width: 60%;
+	width: 65%;
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -133,9 +133,6 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-}
-
-.form label {
 }
 
 .form div input {
@@ -196,14 +193,14 @@ main {
 	grid-template-areas:
 		'arcade advanced pro'
 		'radio  radio    radio';
-	gap: 5px;
+	gap: 10px;
 }
 
 .plan-option {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border-radius: 5px;
+	border-radius: 10px;
 	border: 2px solid var(--light-gray);
 }
 
@@ -246,7 +243,12 @@ main {
 	gap: 10px;
 	background-color: var(--alabaster);
 	font-weight: 700;
+	border-radius: 5px;
 	color: var(--cool-gray);
+}
+
+.radio-option-selected {
+	color: var(--marine-blue);
 }
 
 .selector {
