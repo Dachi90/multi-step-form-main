@@ -260,12 +260,46 @@ main {
 	align-items: center;
 }
 
+.montlhy {
+	cursor: pointer;
+}
+
+.yearly {
+	cursor: pointer;
+}
+
 .circle {
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
 	background-color: var(--white);
 	margin-left: 2px;
+}
+
+.circleRight {
+	animation: circleMoveRight 1s forwards;
+}
+
+.circleLeft {
+	animation: circleMoveLeft 1s forwards;
+}
+
+@keyframes circleMoveRight {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(20px);
+	}
+}
+
+@keyframes circleMoveLeft {
+	0% {
+		transform: translateX(20px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
 }
 
 .buttons {
