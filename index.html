@@ -43,7 +43,7 @@
 			</aside>
 
 			<main>
-				<section class="personal-info">
+				<section class="personal-info invisible">
 					<header class="personal-info-header">
 						<h2>Personal info</h2>
 						<p>Please provide your name, email adress, and phone number.</p>
@@ -67,7 +67,57 @@
 					<button class="button-next">Next Step</button>
 				</section>
 
-				<section class="select-plan invisible"></section>
+				<section class="select-plan">
+					<header class="select-plan-header">
+						<h2>Select your plan</h2>
+						<p>You have the option of monthly or yearly billing.</p>
+					</header>
+
+					<section class="plans-options">
+						<article class="arcade plan-option">
+							<div class="option-image">
+								<img src="./assets/images/icon-arcade.svg" alt="arcade option image" />
+							</div>
+							<div class="text-options">
+								<p>Arcade</p>
+								<p><span>$9/mo</span></p>
+							</div>
+						</article>
+
+						<article class="advanced plan-option">
+							<div class="option-image">
+								<img src="./assets/images/icon-advanced.svg" alt="arcade option image" />
+							</div>
+							<div class="text-options">
+								<p>Advanced</p>
+								<p><span>$12/mo</span></p>
+							</div>
+						</article>
+
+						<article class="pro plan-option">
+							<div class="option-image">
+								<img src="./assets/images/icon-pro.svg" alt="arcade option image" />
+							</div>
+							<div class="text-options">
+								<p>Pro</p>
+								<p><span>$15/mo</span></p>
+							</div>
+						</article>
+
+						<article class="radio-option">
+							<p>Monthly</p>
+							<div class="selector">
+								<div class="circle"></div>
+							</div>
+							<p>Yearly</p>
+						</article>
+					</section>
+
+					<div class="buttons">
+						<button class="button-back">Go back</button>
+						<button class="button-next">Next Step</button>
+					</div>
+				</section>
 				<section class="add-ons invisible"></section>
 				<section class="summary invisible"></section>
 			</main>
