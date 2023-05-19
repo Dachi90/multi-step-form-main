@@ -217,10 +217,19 @@ main {
 	padding: 10px;
 	color: var(--marine-blue);
 	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 .text-options span {
 	color: var(--cool-gray);
+}
+
+.yearly-text {
+	color: var(--marine-blue);
+	font-weight: 100;
+	font-size: 12px;
 }
 
 .arcade {

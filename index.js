@@ -10,6 +10,7 @@ const $ButtonNextInfo = document.querySelector('.button-next-info');
 
 /*  HTML reference - Select Plan Section */
 const $SectionSelectPlan = document.querySelector('.select-plan');
+const $DivTextOptions = document.querySelectorAll('.text-options');
 const $ButtonBackPlan = document.querySelector('.button-back-plan');
 const $Selector = document.querySelector('.selector');
 const $Circle = document.querySelector('.circle');
@@ -26,6 +27,26 @@ $ButtonNextInfo.addEventListener('click', () => {
 });
 
 /* Select plan */
+const yearlyText = () => {
+	$DivTextOptions.forEach((div) => {
+		if (div.childElementCount < 3) {
+			const p = document.createElement('p');
+			p.classList.add('yearly-text');
+			p.innerText = '2 months free';
+			div.appendChild(p);
+		}
+	});
+};
+
+const removeYearlyText = () => {
+	$DivTextOptions.forEach((div) => {
+		const childRemove = div.querySelector('.yearly-text');
+		if (childRemove) {
+			childRemove.remove();
+		}
+	});
+};
+
 $ButtonBackPlan.addEventListener('click', () => {
 	$SectionSelectPlan.classList.add('invisible');
 	$SectionPersonalInfo.classList.remove('invisible');
@@ -37,6 +58,7 @@ $Montlhy.addEventListener('click', () => {
 
 	$Montlhy.classList.add('radio-option-selected');
 	$Yearly.classList.remove('radio-option-selected');
+	removeYearlyText();
 });
 
 $Yearly.addEventListener('click', () => {
@@ -45,4 +67,5 @@ $Yearly.addEventListener('click', () => {
 
 	$Yearly.classList.add('radio-option-selected');
 	$Montlhy.classList.remove('radio-option-selected');
+	yearlyText();
 });
