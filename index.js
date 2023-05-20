@@ -10,7 +10,8 @@ const $ButtonNextInfo = document.querySelector('.button-next-info');
 
 /*  HTML reference - Select Plan Section */
 const $SectionSelectPlan = document.querySelector('.select-plan');
-const $DivTextOptions = document.querySelectorAll('.text-options');
+const $PlansOptions = document.querySelectorAll('.plan-option');
+const $DivsTextOptions = document.querySelectorAll('.text-options');
 const $ButtonBackPlan = document.querySelector('.button-back-plan');
 const $Selector = document.querySelector('.selector');
 const $Circle = document.querySelector('.circle');
@@ -27,8 +28,16 @@ $ButtonNextInfo.addEventListener('click', () => {
 });
 
 /* Select plan */
+
+const planOptionSelected = (element) => {
+	$PlansOptions.forEach((div) => {
+		div.classList.remove('plan-option-selected');
+	});
+	element.classList.add('plan-option-selected');
+};
+
 const yearlyText = () => {
-	$DivTextOptions.forEach((div) => {
+	$DivsTextOptions.forEach((div) => {
 		if (div.childElementCount < 3) {
 			const p = document.createElement('p');
 			p.classList.add('yearly-text');
@@ -39,7 +48,7 @@ const yearlyText = () => {
 };
 
 const removeYearlyText = () => {
-	$DivTextOptions.forEach((div) => {
+	$DivsTextOptions.forEach((div) => {
 		const childRemove = div.querySelector('.yearly-text');
 		if (childRemove) {
 			childRemove.remove();
@@ -47,9 +56,18 @@ const removeYearlyText = () => {
 	});
 };
 
+$PlansOptions.forEach((element) => {
+	element.addEventListener('click', () => {
+		planOptionSelected(element);
+	});
+});
+
 $ButtonBackPlan.addEventListener('click', () => {
 	$SectionSelectPlan.classList.add('invisible');
 	$SectionPersonalInfo.classList.remove('invisible');
+
+	$Number2.classList.remove('number-selected');
+	$Number1.classList.add('number-selected');
 });
 
 $Montlhy.addEventListener('click', () => {

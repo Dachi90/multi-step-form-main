@@ -142,6 +142,11 @@ main {
 	outline: none;
 	font-weight: 700;
 	cursor: pointer;
+	border: 1px solid var(--light-gray);
+}
+
+.form div input:hover {
+	border-color: var(--purplish-blue);
 }
 
 .form div input::placeholder {
@@ -186,7 +191,7 @@ main {
 }
 
 .plans-options {
-	height: 50%;
+	height: 40%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 80% 20%;
@@ -204,8 +209,12 @@ main {
 	border: 2px solid var(--light-gray);
 }
 
+.plan-option:hover {
+	border-color: var(--pastel-blue);
+}
+
 .plan-option-selected {
-	border-color: var(--purplish-blue);
+	border-color: var(--pastel-blue);
 	background-color: var(--alabaster);
 }
 
