@@ -23,13 +23,19 @@ const $Yearly = document.querySelector('.yearly');
 
 /* Personal Info  */
 const validateInputs = () => {
+	let validateInputs;
 	for (let i = 0; i < $InputsHeaders.length; i++) {
 		if ($Inputs[i].value === '') {
 			$ErrorsP[i].classList.remove('invisible');
+			$Inputs[i].classList.add('border-error');
+			validateInputs = false;
 		} else {
-			return true;
+			$ErrorsP[i].classList.add('invisible');
+			$Inputs[i].classList.remove('border-error');
+			validateInputs = true;
 		}
 	}
+	return validateInputs;
 };
 
 $ButtonNextInfo.addEventListener('click', () => {

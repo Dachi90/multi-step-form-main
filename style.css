@@ -134,7 +134,7 @@ main {
 	gap: 5px;
 }
 
-.form > div input {
+.input {
 	color: var(--marine-blue);
 	padding: 10px;
 	border-radius: 5px;
@@ -144,11 +144,11 @@ main {
 	border: 1px solid var(--light-gray);
 }
 
-.form > div input:hover {
+.input:hover {
 	border-color: var(--purplish-blue);
 }
 
-.form > div input::placeholder {
+.input::placeholder {
 	color: var(--cool-gray);
 	font-weight: 700;
 }
@@ -161,6 +161,10 @@ main {
 .error {
 	color: var(--strawberry-red);
 	font-weight: 700;
+}
+
+.border-error {
+	border-color: var(--strawberry-red);
 }
 
 .button-next {
