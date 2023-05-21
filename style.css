@@ -4,6 +4,9 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	/* Tipography */
+	font-family: 'Ubuntu';
+	font-size: 14px;
 }
 
 :root {
@@ -20,10 +23,6 @@
 	--magnolia: hsl(217, 100%, 97%);
 	--alabaster: hsl(231, 100%, 99%);
 	--white: hsl(0, 0%, 100%);
-
-	/* Tipography */
-	font-family: 'Ubuntu';
-	font-size: 14px;
 }
 body {
 	min-height: 100vh;
@@ -129,13 +128,13 @@ main {
 	color: var(--marine-blue);
 }
 
-.form div {
+.form > div {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
 }
 
-.form div input {
+.form > div input {
 	color: var(--marine-blue);
 	padding: 10px;
 	border-radius: 5px;
@@ -145,12 +144,22 @@ main {
 	border: 1px solid var(--light-gray);
 }
 
-.form div input:hover {
+.form > div input:hover {
 	border-color: var(--purplish-blue);
 }
 
-.form div input::placeholder {
+.form > div input::placeholder {
 	color: var(--cool-gray);
+	font-weight: 700;
+}
+
+.input-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.error {
+	color: var(--strawberry-red);
 	font-weight: 700;
 }
 

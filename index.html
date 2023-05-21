@@ -50,18 +50,27 @@
 					</header>
 					<form class="form">
 						<div class="form-name">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" placeholder="e.g Stephen King" />
+							<div class="input-header">
+								<label for="name">Name</label>
+								<p class="error invisible">The field is required</p>
+							</div>
+							<input class="input" type="text" name="name" id="name" placeholder="e.g Stephen King" />
 						</div>
 
 						<div class="form-email">
-							<label for="email">Email Adress</label>
-							<input type="email" name="email" id="email" placeholder="e.g stephenking@lorem.com" />
+							<div class="input-header">
+								<label for="email">Email Adress</label>
+								<p class="error invisible">The field is required</p>
+							</div>
+							<input class="input" type="email" name="email" id="email" placeholder="e.g stephenking@lorem.com" />
 						</div>
 
 						<div class="form-phone">
-							<label for="phone">Phone Number</label>
-							<input type="tel" name="phone" id="phone" placeholder="e.g +1 234 567 890" />
+							<div class="input-header">
+								<label for="phone">Phone Number</label>
+								<p class="error invisible">The field is required</p>
+							</div>
+							<input class="input" type="tel" name="phone" id="phone" placeholder="e.g +1 234 567 890" />
 						</div>
 					</form>
 					<button class="button-next button-next-info">Next Step</button>

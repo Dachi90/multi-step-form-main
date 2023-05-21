@@ -6,6 +6,9 @@ const $Number4 = document.querySelector('.number4');
 
 /* HTML reference - Personal Info Section */
 const $SectionPersonalInfo = document.querySelector('.personal-info');
+const $Inputs = document.querySelectorAll('.input');
+const $InputsHeaders = document.querySelectorAll('.input-header');
+const $ErrorsP = document.querySelectorAll('.error');
 const $ButtonNextInfo = document.querySelector('.button-next-info');
 
 /*  HTML reference - Select Plan Section */
@@ -19,12 +22,24 @@ const $Montlhy = document.querySelector('.montlhy');
 const $Yearly = document.querySelector('.yearly');
 
 /* Personal Info  */
-$ButtonNextInfo.addEventListener('click', () => {
-	$SectionPersonalInfo.classList.add('invisible');
-	$SectionSelectPlan.classList.remove('invisible');
+const validateName = () => {
+	for (let i = 0; i < $InputsHeaders.length; i++) {
+		if ($Inputs[i].value === '') {
+			$ErrorsP[i].classList.remove('invisible');
+		} else {
+			return true;
+		}
+	}
+};
 
-	$Number1.classList.remove('number-selected');
-	$Number2.classList.add('number-selected');
+$ButtonNextInfo.addEventListener('click', () => {
+	if (validateName()) {
+		$SectionPersonalInfo.classList.add('invisible');
+		$SectionSelectPlan.classList.remove('invisible');
+
+		$Number1.classList.remove('number-selected');
+		$Number2.classList.add('number-selected');
+	}
 });
 
 /* Select plan */
