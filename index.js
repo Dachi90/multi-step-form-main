@@ -22,7 +22,7 @@ const $Montlhy = document.querySelector('.montlhy');
 const $Yearly = document.querySelector('.yearly');
 
 /* Personal Info  */
-const validateName = () => {
+const validateInputs = () => {
 	for (let i = 0; i < $InputsHeaders.length; i++) {
 		if ($Inputs[i].value === '') {
 			$ErrorsP[i].classList.remove('invisible');
@@ -33,7 +33,7 @@ const validateName = () => {
 };
 
 $ButtonNextInfo.addEventListener('click', () => {
-	if (validateName()) {
+	if (validateInputs()) {
 		$SectionPersonalInfo.classList.add('invisible');
 		$SectionSelectPlan.classList.remove('invisible');
 
