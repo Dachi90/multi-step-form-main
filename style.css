@@ -347,6 +347,70 @@ main {
 	cursor: pointer;
 }
 
+/* Add-ons Section */
+.add-ons {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 80%;
+	padding: 0px 30px;
+}
+
+.add-ons-header h2 {
+	padding-bottom: 5px;
+	font-size: 28px;
+	color: var(--marine-blue);
+}
+
+.add-ons-header p {
+	font-weight: 400;
+	color: var(--cool-gray);
+}
+
+.add-ons-options {
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.add-ons-options article {
+	border: 1px solid var(--light-gray);
+	border-radius: 10px;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add-ons-text-wrapper p {
+	color: var(--marine-blue);
+	font-weight: 700;
+}
+
+.add-ons-text-wrapper span {
+	color: var(--cool-gray);
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.add-on-price p {
+	font-weight: 700;
+	color: var(--purplish-blue);
+}
+
+.add-ons-options-selected {
+	border-color: var(--purplish-blue);
+	background-color: var(--light-blue);
+}
+
+.add-ons-text-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
 /* Footer */
 .attribution {
 	position: fixed;
