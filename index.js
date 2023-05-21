@@ -1,25 +1,31 @@
+const d = document;
+
 /* HTML reference - Aside */
-const $Number1 = document.querySelector('.number1');
-const $Number2 = document.querySelector('.number2');
-const $Number3 = document.querySelector('.number3');
-const $Number4 = document.querySelector('.number4');
+const $Number1 = d.querySelector('.number1');
+const $Number2 = d.querySelector('.number2');
+const $Number3 = d.querySelector('.number3');
+const $Number4 = d.querySelector('.number4');
 
 /* HTML reference - Personal Info Section */
-const $SectionPersonalInfo = document.querySelector('.personal-info');
-const $Inputs = document.querySelectorAll('.input');
-const $InputsHeaders = document.querySelectorAll('.input-header');
-const $ErrorsP = document.querySelectorAll('.error');
-const $ButtonNextInfo = document.querySelector('.button-next-info');
+const $SectionPersonalInfo = d.querySelector('.personal-info');
+const $Inputs = d.querySelectorAll('.input');
+const $InputsHeaders = d.querySelectorAll('.input-header');
+const $ErrorsP = d.querySelectorAll('.error');
+const $ButtonNextInfo = d.querySelector('.button-next-info');
 
 /*  HTML reference - Select Plan Section */
-const $SectionSelectPlan = document.querySelector('.select-plan');
-const $PlansOptions = document.querySelectorAll('.plan-option');
-const $DivsTextOptions = document.querySelectorAll('.text-options');
-const $ButtonBackPlan = document.querySelector('.button-back-plan');
-const $Selector = document.querySelector('.selector');
-const $Circle = document.querySelector('.circle');
-const $Montlhy = document.querySelector('.montlhy');
-const $Yearly = document.querySelector('.yearly');
+const $SectionSelectPlan = d.querySelector('.select-plan');
+const $PlansOptions = d.querySelectorAll('.plan-option');
+const $DivsTextOptions = d.querySelectorAll('.text-options');
+const $ButtonBackPlan = d.querySelector('.button-back-plan');
+const $Selector = d.querySelector('.selector');
+const $Circle = d.querySelector('.circle');
+const $Montlhy = d.querySelector('.montlhy');
+const $Yearly = d.querySelector('.yearly');
+const $ButtonNextPlan = d.querySelector('.button-next-plan');
+
+/* HTML reference - Pick add-ons Section */
+const $SectionAddons = d.querySelector('.add-ons');
 
 /* Personal Info  */
 const validateInputs = () => {
@@ -83,14 +89,6 @@ $PlansOptions.forEach((element) => {
 	});
 });
 
-$ButtonBackPlan.addEventListener('click', () => {
-	$SectionSelectPlan.classList.add('invisible');
-	$SectionPersonalInfo.classList.remove('invisible');
-
-	$Number2.classList.remove('number-selected');
-	$Number1.classList.add('number-selected');
-});
-
 $Montlhy.addEventListener('click', () => {
 	$Circle.classList.add('circleLeft');
 	$Circle.classList.remove('circleRight');
@@ -107,4 +105,20 @@ $Yearly.addEventListener('click', () => {
 	$Yearly.classList.add('radio-option-selected');
 	$Montlhy.classList.remove('radio-option-selected');
 	yearlyText();
+});
+
+$ButtonBackPlan.addEventListener('click', () => {
+	$SectionSelectPlan.classList.add('invisible');
+	$SectionPersonalInfo.classList.remove('invisible');
+
+	$Number2.classList.remove('number-selected');
+	$Number1.classList.add('number-selected');
+});
+
+$ButtonNextPlan.addEventListener('click', () => {
+	$SectionSelectPlan.classList.add('invisible');
+	$SectionAddons.classList.remove('invisible');
+
+	$Number2.classList.remove('number-selected');
+	$Number3.classList.add('number-selected');
 });
