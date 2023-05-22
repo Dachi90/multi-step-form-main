@@ -214,6 +214,14 @@ main {
 	gap: 10px;
 }
 
+.plans-options-error::after {
+	width: 300%;
+	content: 'eliga una opción';
+	text-align: center;
+	color: var(--strawberry-red);
+	font-weight: 700;
+}
+
 .plan-option {
 	display: flex;
 	flex-direction: column;

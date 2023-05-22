@@ -15,6 +15,7 @@ const $ButtonNextInfo = d.querySelector('.button-next-info');
 
 /*  HTML reference - Select Plan Section */
 const $SectionSelectPlan = d.querySelector('.select-plan');
+const $PlanOptionSection = d.querySelector('.plans-options');
 const $PlansOptions = d.querySelectorAll('.plan-option');
 const $DivsTextOptions = d.querySelectorAll('.text-options');
 const $Selector = d.querySelector('.selector');
@@ -67,7 +68,10 @@ const planOptionSelected = (element) => {
 const planOptionCheck = () => {
 	for (let i = 0; i < $PlansOptions.length; i++) {
 		if ($PlansOptions[i].classList.contains('plan-option-selected')) {
+			$PlanOptionSection.classList.remove('plans-options-error');
 			return true;
+		} else {
+			$PlanOptionSection.classList.add('plans-options-error');
 		}
 	}
 };
@@ -138,3 +142,11 @@ $ButtonNextPlan.addEventListener('click', () => {
 });
 
 /* Add-on Section */
+
+$ButtonBackAddons.addEventListener('click', () => {
+	$SectionAddons.classList.add('invisible');
+	$SectionSelectPlan.classList.remove('invisible');
+
+	$Number3.classList.remove('number-selected');
+	$Number2.classList.add('number-selected');
+});
