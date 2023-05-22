@@ -31,6 +31,14 @@ const $ButtonNextAddons = d.querySelector('.button-next-add-on');
 
 /* HMTL reference - Summary */
 const $SectionSummary = d.querySelector('.summary');
+const $PlanSelectedText = d.querySelector('.plan-selected-text');
+const $PlanSelectedChange = d.querySelector('.plan-selected-change');
+const $PlanSelectedPrice = d.querySelector('.plan-selected-price');
+const $AddonsSelected = d.querySelector('.add-ons-selected');
+const $AddonsText = d.querySelector('.add-on-text');
+const $AddonsPrice = d.querySelector('.add-on-price');
+const $TotalPriceText = d.querySelector('.total-price-text');
+const $TotalPriceNumber = d.querySelector('.total-price-number');
 
 /* Personal Info  */
 const validateInputs = () => {
