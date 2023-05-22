@@ -17,15 +17,17 @@ const $ButtonNextInfo = d.querySelector('.button-next-info');
 const $SectionSelectPlan = d.querySelector('.select-plan');
 const $PlansOptions = d.querySelectorAll('.plan-option');
 const $DivsTextOptions = d.querySelectorAll('.text-options');
-const $ButtonBackPlan = d.querySelector('.button-back-plan');
 const $Selector = d.querySelector('.selector');
 const $Circle = d.querySelector('.circle');
 const $Montlhy = d.querySelector('.montlhy');
 const $Yearly = d.querySelector('.yearly');
+const $ButtonBackPlan = d.querySelector('.button-back-plan');
 const $ButtonNextPlan = d.querySelector('.button-next-plan');
 
 /* HTML reference - Pick add-ons Section */
 const $SectionAddons = d.querySelector('.add-ons');
+const $ButtonBackAddons = d.querySelector('.button-back-add-on');
+const $ButtonNextAddons = d.querySelector('.button-next-add-on');
 
 /* Personal Info  */
 const validateInputs = () => {
@@ -55,12 +57,19 @@ $ButtonNextInfo.addEventListener('click', () => {
 });
 
 /* Select plan */
-
 const planOptionSelected = (element) => {
 	$PlansOptions.forEach((div) => {
 		div.classList.remove('plan-option-selected');
 	});
 	element.classList.add('plan-option-selected');
+};
+
+const planOptionCheck = () => {
+	for (let i = 0; i < $PlansOptions.length; i++) {
+		if ($PlansOptions[i].classList.contains('plan-option-selected')) {
+			return true;
+		}
+	}
 };
 
 const yearlyText = () => {
@@ -116,9 +125,16 @@ $ButtonBackPlan.addEventListener('click', () => {
 });
 
 $ButtonNextPlan.addEventListener('click', () => {
-	$SectionSelectPlan.classList.add('invisible');
-	$SectionAddons.classList.remove('invisible');
+	if (planOptionCheck()) {
+		$SectionSelectPlan.classList.add('invisible');
+		$SectionAddons.classList.remove('invisible');
 
-	$Number2.classList.remove('number-selected');
-	$Number3.classList.add('number-selected');
+		$Number2.classList.remove('number-selected');
+		$Number3.classList.add('number-selected');
+	} else {
+		console.log(planOptionCheck());
+		console.log('eliga una opción');
+	}
 });
+
+/* Add-on Section */

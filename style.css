@@ -220,6 +220,7 @@ main {
 	justify-content: space-between;
 	border-radius: 10px;
 	border: 2px solid var(--light-gray);
+	cursor: pointer;
 }
 
 .plan-option:hover {
@@ -345,6 +346,10 @@ main {
 	font-weight: 700;
 	font-size: 1.1rem;
 	cursor: pointer;
+}
+
+.button-back:hover {
+	color: var(--marine-blue);
 }
 
 /* Add-ons Section */
