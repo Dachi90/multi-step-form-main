@@ -216,7 +216,7 @@ main {
 
 .plans-options-error::after {
 	width: 300%;
-	content: 'eliga una opción';
+	content: 'choose an option';
 	text-align: center;
 	color: var(--strawberry-red);
 	font-weight: 700;

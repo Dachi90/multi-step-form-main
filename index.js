@@ -9,7 +9,6 @@ const $Number4 = d.querySelector('.number4');
 /* HTML reference - Personal Info Section */
 const $SectionPersonalInfo = d.querySelector('.personal-info');
 const $Inputs = d.querySelectorAll('.input');
-const $InputsHeaders = d.querySelectorAll('.input-header');
 const $ErrorsP = d.querySelectorAll('.error');
 const $ButtonNextInfo = d.querySelector('.button-next-info');
 
@@ -30,21 +29,27 @@ const $SectionAddons = d.querySelector('.add-ons');
 const $ButtonBackAddons = d.querySelector('.button-back-add-on');
 const $ButtonNextAddons = d.querySelector('.button-next-add-on');
 
+/* HMTL reference - Summary */
+const $SectionSummary = d.querySelector('.summary');
+
 /* Personal Info  */
 const validateInputs = () => {
-	let validateInputs;
-	for (let i = 0; i < $InputsHeaders.length; i++) {
+	const validateInputs = [];
+	for (let i = 0; i < $Inputs.length; i++) {
 		if ($Inputs[i].value === '') {
 			$ErrorsP[i].classList.remove('invisible');
 			$Inputs[i].classList.add('border-error');
-			validateInputs = false;
+			validateInputs.push(false);
 		} else {
 			$ErrorsP[i].classList.add('invisible');
 			$Inputs[i].classList.remove('border-error');
-			validateInputs = true;
+			validateInputs.push(true);
 		}
 	}
-	return validateInputs;
+	const allTrue = validateInputs.every((element) => {
+		return element === true;
+	});
+	return allTrue;
 };
 
 $ButtonNextInfo.addEventListener('click', () => {
@@ -149,4 +154,12 @@ $ButtonBackAddons.addEventListener('click', () => {
 
 	$Number3.classList.remove('number-selected');
 	$Number2.classList.add('number-selected');
+});
+
+$ButtonNextAddons.addEventListener('click', () => {
+	$SectionAddons.classList.add('invisible');
+	$SectionSummary.classList.remove('invisible');
+
+	$Number3.classList.remove('number-selected');
+	$Number4.classList.add('number-selected');
 });
