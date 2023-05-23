@@ -40,6 +40,8 @@ const $AddonsText = d.querySelector('.add-on-text');
 const $AddonsPrice = d.querySelector('.add-on-price');
 const $TotalPriceText = d.querySelector('.total-price-text');
 const $TotalPriceNumber = d.querySelector('.total-price-number');
+const $ButtonBackSummary = d.querySelector('.button-back-summary');
+const $ButtonNextSummary = d.querySelector('.button-next-summary');
 
 /* Personal Info  */
 const validateInputs = () => {
@@ -171,6 +173,29 @@ $ButtonNextPlan.addEventListener('click', () => {
 
 /* Add-on Section */
 
+const savePlanOptionsValues = () => {
+	const planOptionValues = {
+		type: '',
+		mode: '',
+		price: '',
+	};
+	$PlansOptions.forEach((planOption) => {
+		if (planOption.classList.contains('plan-option-selected')) {
+			planOptionValues.type = planOption.querySelector('.type-plan').textContent;
+			planOptionValues.price = planOption.querySelector('.text-options-price').textContent;
+		}
+	});
+	if ($Montlhy.classList.contains('radio-option-selected')) {
+		console.log('hola1');
+		planOptionValues.mode = $Montlhy.textContent;
+	}
+	if ($Yearly.classList.contains('radio-option-selected')) {
+		console.log('hola2');
+		planOptionValues.mode = $Yearly.textContent;
+	}
+	return planOptionValues;
+};
+
 $ButtonBackAddons.addEventListener('click', () => {
 	$SectionAddons.classList.add('invisible');
 	$SectionSelectPlan.classList.remove('invisible');
@@ -180,9 +205,23 @@ $ButtonBackAddons.addEventListener('click', () => {
 });
 
 $ButtonNextAddons.addEventListener('click', () => {
+	const planValues = savePlanOptionsValues();
+	$PlanSelectedText.textContent = `${planValues.type} (${planValues.mode})`;
+	$PlanSelectedPrice.textContent = `${planValues.price}`;
+
 	$SectionAddons.classList.add('invisible');
 	$SectionSummary.classList.remove('invisible');
 
 	$Number3.classList.remove('number-selected');
 	$Number4.classList.add('number-selected');
+});
+
+/* Summary Section */
+
+$ButtonBackSummary.addEventListener('click', () => {
+	$SectionSummary.classList.add('invisible');
+	$SectionAddons.classList.remove('invisible');
+
+	$Number4.classList.remove('number-selected');
+	$Number3.classList.add('number-selected');
 });
