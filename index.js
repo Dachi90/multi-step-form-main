@@ -17,6 +17,7 @@ const $SectionSelectPlan = d.querySelector('.select-plan');
 const $PlanOptionSection = d.querySelector('.plans-options');
 const $PlansOptions = d.querySelectorAll('.plan-option');
 const $DivsTextOptions = d.querySelectorAll('.text-options');
+const $TextOptionsPrice = d.querySelectorAll('.text-options-price');
 const $Selector = d.querySelector('.selector');
 const $Circle = d.querySelector('.circle');
 const $Montlhy = d.querySelector('.montlhy');
@@ -89,6 +90,18 @@ const planOptionCheck = () => {
 	}
 };
 
+const monthlyPrice = () => {
+	$TextOptionsPrice[0].innerHTML = '$9/mo';
+	$TextOptionsPrice[1].innerHTML = '$12/mo';
+	$TextOptionsPrice[2].innerHTML = '$15/mo';
+};
+
+const yearlyPrice = () => {
+	$TextOptionsPrice[0].innerHTML = '$90/mo';
+	$TextOptionsPrice[1].innerHTML = '$120/mo';
+	$TextOptionsPrice[2].innerHTML = '$150/mo';
+};
+
 const yearlyText = () => {
 	$DivsTextOptions.forEach((div) => {
 		if (div.childElementCount < 3) {
@@ -121,6 +134,7 @@ $Montlhy.addEventListener('click', () => {
 
 	$Montlhy.classList.add('radio-option-selected');
 	$Yearly.classList.remove('radio-option-selected');
+	monthlyPrice();
 	removeYearlyText();
 });
 
@@ -130,6 +144,7 @@ $Yearly.addEventListener('click', () => {
 
 	$Yearly.classList.add('radio-option-selected');
 	$Montlhy.classList.remove('radio-option-selected');
+	yearlyPrice();
 	yearlyText();
 });
 
