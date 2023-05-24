@@ -40,11 +40,13 @@ const $PlanSelectedChange = d.querySelector('.plan-selected-change');
 const $PlanSelectedPrice = d.querySelector('.plan-selected-price');
 const $AddonsSelected = d.querySelector('.add-ons-selected');
 const $AddonsText = d.querySelector('.add-on-text');
-
 const $TotalPriceText = d.querySelector('.total-price-text');
 const $TotalPriceNumber = d.querySelector('.total-price-number');
 const $ButtonBackSummary = d.querySelector('.button-back-summary');
 const $ButtonNextSummary = d.querySelector('.button-next-summary');
+
+/* Thank you Section */
+const $SectionThankYou = d.querySelector('.thank-you');
 
 /* Personal Info  */
 const validateInputs = () => {
@@ -287,4 +289,9 @@ $ButtonBackSummary.addEventListener('click', () => {
 
 	$Number4.classList.remove('number-selected');
 	$Number3.classList.add('number-selected');
+});
+
+$ButtonNextSummary.addEventListener('click', () => {
+	$SectionSummary.classList.add('invisible');
+	$SectionThankYou.classList.remove('invisible');
 });
