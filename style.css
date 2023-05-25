@@ -51,7 +51,7 @@ body {
 	margin: 10px;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 25px;
 	padding: 30px;
 }
 
@@ -559,4 +559,60 @@ main {
 
 .invisible {
 	display: none;
+}
+
+@media (max-width: 800px) {
+	.wrapper {
+		flex-direction: column;
+		width: 300px;
+		height: 600px;
+	}
+
+	.aside {
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+		width: auto;
+		height: 200px;
+		background-image: url(./assets/images/bg-sidebar-mobile.svg);
+		margin: 0;
+		border-radius: 0;
+	}
+
+	.step1-info {
+		display: none;
+	}
+
+	.step2-info {
+		display: none;
+	}
+
+	.step3-info {
+		display: none;
+	}
+
+	.step4-info {
+		display: none;
+	}
+
+	main {
+		width: auto;
+		background-color: var(--magnolia);
+	}
+
+	.sections {
+		justify-content: space-around;
+		width: 100%;
+		height: 80%;
+		padding: 0px 10px;
+		position: relative;
+		top: -80px;
+		background-color: var(--white);
+		border-radius: 15px;
+		margin: 0px 15px;
+	}
+
+	.form {
+		height: 65%;
+	}
 }
