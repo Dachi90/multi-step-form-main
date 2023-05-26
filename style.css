@@ -179,6 +179,15 @@ main {
 	font-size: 1.1rem;
 }
 
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttons-info {
+	justify-content: flex-end;
+}
+
 /* Select plan */
 .select-plan {
 	display: flex;
@@ -341,11 +350,6 @@ main {
 	100% {
 		transform: translateX(0px);
 	}
-}
-
-.buttons {
-	display: flex;
-	justify-content: space-between;
 }
 
 .button-back {
@@ -603,16 +607,22 @@ main {
 	.sections {
 		justify-content: space-around;
 		width: 100%;
-		height: 80%;
+		height: 90%;
 		padding: 0px 10px;
 		position: relative;
-		top: -80px;
+		top: -90px;
 		background-color: var(--white);
 		border-radius: 15px;
 		margin: 0px 15px;
+		padding-top: 15px;
 	}
 
 	.form {
 		height: 65%;
+	}
+
+	.buttons-info {
+		position: relative;
+		bottom: -90px;
 	}
 }
