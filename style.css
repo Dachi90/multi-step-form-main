@@ -617,12 +617,38 @@ main {
 		padding-top: 15px;
 	}
 
-	.form {
-		height: 65%;
+	.personal-info {
+		height: auto;
 	}
 
-	.buttons-info {
+	.form {
+		margin-top: 30px;
+		height: 65%;
+		gap: 20px;
+	}
+
+	.buttons {
 		position: relative;
-		bottom: -90px;
+		bottom: -100px;
+	}
+
+	.plans-options {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.plan-option {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	.add-ons-options {
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	.thank-you {
+		height: auto;
+		padding: 60px 0px;
 	}
 }
